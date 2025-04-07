@@ -1,7 +1,6 @@
-/models/base/*
-/models/finetuned/*
+/models/base/gemma-2-2b-it
+/models/base/gemma-3-4b-it
 /env
-/test/result/base/*
-/test/result/finetuned/*
 /training_logs
+/logs
 /training_results
