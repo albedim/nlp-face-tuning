@@ -1,2 +1,7 @@
-/models
+/models/base/*
+/models/finetuned/*
 /env
+/test/result/base/*
+/test/result/finetuned/*
+/training_logs
+/training_results
