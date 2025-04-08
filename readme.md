@@ -42,9 +42,9 @@ Fornire il nome del dataset da utilizzare ovvero quello generato in precedenza (
 4. < epochs >
 Numero di epoche da usare nel training (int)
 
-## Dopo ogni training, nel path del modello fine-tunato (models/finetuned/{NOME_MODELLO}) troverete un file chiamato benchmarks.png, è un grafico che mostra l'andamento del loss in funzione delle interazioni.
+### Dopo ogni training, nel path del modello fine-tunato (models/finetuned/{NOME_MODELLO}) troverete un file chiamato benchmarks.png, è un grafico che mostra l'andamento del loss in funzione delle interazioni.
 
-### Come avviare un modello:
+## Come avviare un modello:
 Per avviare un modello bisogna eseguire il seguente comando:
 ```bash
 python run_model.py <model_path> [max_tokens]
@@ -57,3 +57,8 @@ ES: Se si vuole avviare il modello fine-tunato e sono stati eseguiti TUTTI i pas
 Come <model_path> va inserito: models/finetuned/{NOME_MODELLO}
 2. < max_tokens >
 Parametro che deterimina la lunghezza massima di token che possono essere generati dalle risposte di un modello
+
+### Il modello verrà avviato e risponderà ai prompt presenti nel seguente file "test/questions.txt".
+### Le risposte vengono salvate rispettivamente
+1. "test/base/%Y-%m-%d_%H-%M-%S.json" se si avvia un modello base.
+2. "test/finetuned/%Y-%m-%d_%H-%M-%S.json" se si avvia un modello fine-tunato.
