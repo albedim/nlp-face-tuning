@@ -4,20 +4,24 @@ import json
 import random
 
 with open("dataset/raw_dataset.txt", "r", encoding="utf-8") as file:
-    lines = file.readlines()[1:]
+    # lines = file.readlines()[1:]
+    lines = file.readlines()
 
+"""
 pattern = r"\[\d{2}/\d{2}/\d{2}, \d{1,2}:\d{2}:\d{2}\s?[APap][Mm]?\] [^:]+: (.+)"
 
 messages = []
 for line in lines:
     match = re.match(pattern, line.strip())
     if match:
-        messages.append(match.group(1))
+        messages.append(match.group(1))"""
 
-output = "\n".join(messages)
+# lines->messages
+output = "\n".join(lines)
+"""
 output = output.replace("This message was deleted.", "")
 output = output.replace(".", "")
-output = output.replace("‎", "")
+output = output.replace("‎", "")"""
 
 
 with open("dataset/temp.txt", "w", encoding="utf-8") as output_file:
