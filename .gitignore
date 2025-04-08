@@ -3,4 +3,8 @@
 /env
 /training_logs
 /logs
+/dataset/fine_tune_dataset.jsonl
+/dataset/fine_tune_dataset_light.jsonl
+/dataset/fine_tune_dataset_light1.jsonl
+/dataset/raw_dataset.txt
 /training_results

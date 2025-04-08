@@ -1,6 +1,7 @@
 import sys
 
 from datasets import load_dataset
+from matplotlib import pyplot as plt
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainingArguments, Trainer
 from peft import LoraConfig, get_peft_model, TaskType
 import torch
@@ -82,6 +83,18 @@ def validate_dataset(dataset, tokenizer, expected_length=512):
     return True
 
 
+def generateBenchmark(result, model_name):
+    x = list(result.keys())
+    y = list(result.values())
+
+    plt.plot(x, y, marker='o')
+    plt.xlabel('Steps')
+    plt.ylabel('Loss')
+    plt.title('Simple Line Graph')
+    plt.grid(True)
+    plt.savefig(f'models/finetuned/{model_name}/benchmark.png', dpi=300)
+
+
 def train_model(model, tokenizer, tokenized_dataset, model_name, epochs):
     training_args = TrainingArguments(
         output_dir="./training_results",
@@ -115,19 +128,7 @@ def train_model(model, tokenizer, tokenized_dataset, model_name, epochs):
         if "loss" in log:
             result[log['step']] = log['loss']
 
-    import matplotlib.pyplot as plt
-
-    # Extract keys and values
-    x = list(result.keys())
-    y = list(result.values())
-
-    # Plot
-    plt.plot(x, y, marker='o')  # You can use marker='o' to show points
-    plt.xlabel('Steps')
-    plt.ylabel('Loss')
-    plt.title('Simple Line Graph')
-    plt.grid(True)
-    plt.savefig(f'models/finetuned/{model_name}/benchmark.png', dpi=300)  # You can change the filename or dpi if needed
+    generateBenchmark(result, model_name)
 
 
 if __name__ == "__main__":
