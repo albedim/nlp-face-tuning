@@ -46,12 +46,9 @@ user_prompts = [
     "Lo consiglieresti?"
 ]
 
-print("Done! Extracted messages saved to 'messages_only.txt'.")
-
 with open('dataset/temp.txt', "r", encoding="utf-8") as f:
     lines = [line.strip() for line in f if line.strip()]
 
-# Build the dataset in the required JSONL format
 dataset = []
 for line in lines:
     prompt = random.choice(user_prompts)
@@ -61,11 +58,10 @@ for line in lines:
     }
     dataset.append(sample)
 
-# Save the dataset in JSONL format
 with open('dataset/fine_tune_dataset.jsonl', "w", encoding="utf-8") as f:
     for entry in dataset:
         json.dump(entry, f, ensure_ascii=False)
-        f.write("\n")  # Write each sample on a new line
+        f.write("\n")
 
 os.remove("dataset/temp.txt")
-print(f"✅ Dataset costruito con {len(dataset)} campioni → salvato in {output_file}")
+print(f"✅ Dataset created with {len(dataset)} sets of data → saved in {output_file}")
