@@ -14,7 +14,7 @@ https://developer.nvidia.com/cuda-12-6-0-download-archive
 
 
 ## Installa il modello pre-trained:
-!!! Discaimer !!!
+!!! Disclaimer !!!
 Il modello può essere cambiato ma è sconsigliato poichè è testato solo con gemma-2-2b-it
 ```bash
 huggingface-cli download google/gemma-2-2b-it  --local-dir ./models/base/gemma-2-2b-it
