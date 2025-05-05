@@ -1,0 +1,22 @@
+USER_PROMPTS = [
+    "What do you think about this?",
+    "Can you explain this to me?",
+    "How do you usually deal with this situation?",
+    "Do you agree or disagree?",
+    "What would you do in this case?",
+    "Could you explain it better?",
+    "Why do you think this happens?",
+    "Do you have any advice?",
+    "How do you see it?",
+    "What’s your point of view?",
+    "Do you think it’s a good idea?",
+    "What would you recommend?",
+    "What’s your opinion?",
+    "Can you elaborate on this?",
+    "What’s your approach?",
+    "Do you think it works?",
+    "How do you handle these kinds of situations?",
+    "Explain this as if I were a beginner.",
+    "Have you ever tried something like this?",
+    "Would you recommend it?"
+]
